@@ -613,5 +613,25 @@
       });
     }
   </script>
- </body>
+ 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAigVw2YHTKgYtWbO-X6C9jk05NMu4MopI",
+    authDomain: "gamequ-shop.firebaseapp.com",
+    databaseURL: "https://gamequ-shop-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "gamequ-shop",
+    storageBucket: "gamequ-shop.appspot.com",
+    messagingSenderId: "244596842700",
+    appId: "1:244596842700:web:cdc67c81a1a16f79c26269",
+    measurementId: "G-QRVWT4WXPC"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</body>
 </html>
