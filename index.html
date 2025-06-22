@@ -1,0 +1,501 @@
+<html class="scroll-smooth" lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   GameQu - Store Layanan Game Digital
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom colors */
+    :root {
+      --color-gradient-start: #00d1ff;
+      --color-gradient-end: #007cf0;
+    }
+    /* Animate fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Live gradient animation */
+    @keyframes liveGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .text-gradient {
+      background: linear-gradient(270deg, #00d1ff, #007cf0, #00d1ff);
+      background-size: 600% 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: liveGradient 8s ease infinite;
+    }
+    .bg-gradient {
+      background: linear-gradient(270deg, #00d1ff, #007cf0, #00d1ff);
+      background-size: 600% 600%;
+      animation: liveGradient 8s ease infinite;
+    }
+    .border-gradient {
+      border-width: 2px;
+      border-style: solid;
+      border-image-slice: 1;
+      border-image-source: linear-gradient(270deg, #00d1ff, #007cf0, #00d1ff);
+      background-size: 600% 600%;
+      animation: liveGradient 8s ease infinite;
+    }
+    .hover\:bg-gradient:hover {
+      background: linear-gradient(270deg, #00d1ff, #007cf0, #00d1ff);
+      background-size: 600% 600%;
+      animation: liveGradient 8s ease infinite;
+    }
+    .hover\:text-white:hover {
+      color: white !important;
+    }
+    /* Star rating styles */
+    .star {
+      cursor: pointer;
+      color: #d1d5db; /* gray-300 */
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    .star.filled {
+      color: #fbbf24; /* yellow-400 */
+    }
+  </style>
+ </head>
+ <body class="bg-white text-gray-900 antialiased">
+  <!-- Header -->
+  <header class="fixed w-full z-50 top-4 left-0 px-4">
+   <nav class="max-w-7xl mx-auto flex items-center justify-between bg-white bg-opacity-80 backdrop-blur-md rounded-xl shadow-lg px-6 py-4 md:py-5">
+    <a class="text-2xl font-extrabold select-none tracking-wide text-gradient" href="#home">
+     GameQu
+    </a>
+    <ul class="hidden md:flex space-x-10 font-semibold">
+     <li>
+      <a class="text-gray-700 hover:text-gradient transition-colors duration-300" href="#home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="text-gray-700 hover:text-gradient transition-colors duration-300" href="#layanan">
+       Layanan
+      </a>
+     </li>
+     <li>
+      <a class="text-gray-700 hover:text-gradient transition-colors duration-300" href="#testimoni">
+       Testimoni
+      </a>
+     </li>
+     <li>
+      <a class="text-gray-700 hover:text-gradient transition-colors duration-300" href="#komentar">
+       Komentar
+      </a>
+     </li>
+     <li>
+      <a class="text-gray-700 hover:text-gradient transition-colors duration-300" href="#kontak">
+       Kontak
+      </a>
+     </li>
+    </ul>
+    <button aria-label="Toggle menu" class="md:hidden text-gradient focus:outline-none" id="menu-btn">
+     <i class="fas fa-bars fa-lg"></i>
+    </button>
+   </nav>
+   <div class="hidden md:hidden bg-white bg-opacity-80 backdrop-blur-md rounded-b-xl shadow-inner" id="mobile-menu">
+    <ul class="flex flex-col space-y-4 px-6 py-5 font-semibold">
+     <li>
+      <a class="block text-gray-700 hover:text-gradient transition-colors duration-300" href="#home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="block text-gray-700 hover:text-gradient transition-colors duration-300" href="#layanan">
+       Layanan
+      </a>
+     </li>
+     <li>
+      <a class="block text-gray-700 hover:text-gradient transition-colors duration-300" href="#testimoni">
+       Testimoni
+      </a>
+     </li>
+     <li>
+      <a class="block text-gray-700 hover:text-gradient transition-colors duration-300" href="#komentar">
+       Komentar
+      </a>
+     </li>
+     <li>
+      <a class="block text-gray-700 hover:text-gradient transition-colors duration-300" href="#kontak">
+       Kontak
+      </a>
+     </li>
+    </ul>
+   </div>
+  </header>
+  <main class="pt-28">
+   <!-- Hero Section -->
+   <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12" id="home">
+    <div class="flex-1 fade-in" data-fade="">
+     <h1 class="text-3xl md:text-4xl font-extrabold leading-tight mb-6 text-gradient">
+      GameQu — Solusi Cepat Layanan Game Digital Kamu!
+     </h1>
+     <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-xl">
+      Jual beli akun, top up all game, dan berbagai layanan digital lainnya dengan aman dan terpercaya.
+     </p>
+     <div class="flex flex-wrap gap-4">
+      <a class="inline-block bg-gradient text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#0069d9] transition-colors duration-300 transform hover:-translate-y-1" href="#layanan">
+       Lihat Layanan
+      </a>
+      <a class="inline-block border-gradient text-gradient font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gradient hover:text-white transition-colors duration-300 transform hover:-translate-y-1" href="https://chat.whatsapp.com/invite/yourgroup" rel="noopener" target="_blank">
+       Gabung Grup WhatsApp
+      </a>
+     </div>
+    </div>
+    <div class="flex-1 fade-in -mt-16 md:-mt-32" data-fade="">
+     <img alt="Ilustrasi seorang gamer muda dengan ekspresi semangat, dikelilingi oleh ikon game digital berwarna cerah, latar belakang futuristik berwarna biru dan hijau toska" class="w-full rounded-xl shadow-lg scale-110 md:scale-125" height="480" loading="lazy" src="https://imagizer.imageshack.com/img924/618/EVShZo.png" width="720"/>
+    </div>
+   </section>
+   <!-- Section Layanan -->
+   <section class="max-w-7xl mx-auto px-6 py-12" id="layanan">
+    <h2 class="text-3xl font-extrabold mb-12 text-center fade-in text-gradient" data-fade="">
+     Layanan Kami
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+     <div class="flex flex-col items-center text-center p-8 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 fade-in" data-fade="">
+      <i class="fas fa-gamepad text-gradient text-5xl mb-6"></i>
+      <h3 class="text-xl font-semibold mb-3 text-gradient">
+       Jual Beli Akun Game
+      </h3>
+      <p class="text-gray-600">
+       Transaksi aman dan cepat untuk berbagai akun game populer.
+      </p>
+     </div>
+     <div class="flex flex-col items-center text-center p-8 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 fade-in" data-fade="">
+      <i class="fas fa-coins text-gradient text-5xl mb-6"></i>
+      <h3 class="text-xl font-semibold mb-3 text-gradient">
+       Top Up Game
+      </h3>
+      <p class="text-gray-600">
+       MLBB, FF, Genshin, PUBG, dan banyak game lainnya dengan harga terbaik.
+      </p>
+     </div>
+     <div class="flex flex-col items-center text-center p-8 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 fade-in" data-fade="">
+      <i class="fas fa-laptop-code text-gradient text-5xl mb-6"></i>
+      <h3 class="text-xl font-semibold mb-3 text-gradient">
+       Jasa Digital
+      </h3>
+      <p class="text-gray-600">
+       Langganan premium, akun edukasi, dan layanan digital lainnya.
+      </p>
+     </div>
+    </div>
+   </section>
+   <!-- Sosial Media & Grup Section -->
+   <section class="max-w-7xl mx-auto px-6 py-12" id="kontak">
+    <h2 class="text-3xl font-extrabold mb-12 text-center fade-in text-gradient" data-fade="">
+     Ikuti Kami &amp; Gabung Grup
+    </h2>
+    <div class="flex justify-center gap-12 text-gradient text-4xl fade-in" data-fade="">
+     <a aria-label="Grup WhatsApp" class="transition-colors duration-300 transform hover:scale-110 hover:text-gradient" href="https://chat.whatsapp.com/invite/yourgroup" rel="noopener" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+     </a>
+     <a aria-label="Instagram GameQu" class="transition-colors duration-300 transform hover:scale-110 hover:text-gradient" href="https://instagram.com/gamequ" rel="noopener" target="_blank">
+      <i class="fab fa-instagram"></i>
+     </a>
+     <a aria-label="TikTok GameQu" class="transition-colors duration-300 transform hover:scale-110 hover:text-gradient" href="https://tiktok.com/@gamequ" rel="noopener" target="_blank">
+      <i class="fab fa-tiktok"></i>
+     </a>
+     <a aria-label="Telegram GameQu" class="transition-colors duration-300 transform hover:scale-110 hover:text-gradient" href="https://t.me/gamequ" rel="noopener" target="_blank">
+      <i class="fab fa-telegram-plane"></i>
+     </a>
+    </div>
+   </section>
+  <!-- Section Testimoni -->
+<section class="max-w-7xl mx-auto px-6 py-12" id="testimoni">
+  <h2 class="text-3xl font-extrabold mb-12 text-center fade-in text-gradient" data-fade>
+    Testimoni Pengguna
+  </h2>
+  <div id="testimonial-slider" class="overflow-hidden relative w-full">
+    <div class="flex transition-transform duration-700 ease-in-out">
+      <div class="min-w-full px-4">
+        <div class="bg-white border rounded-xl shadow-md p-6 text-center">
+          <p class="text-gray-700 italic mb-4">"Pelayanan cepat dan aman. Akun langsung masuk setelah pembayaran!"</p>
+          <h4 class="font-semibold text-gradient">- Rizky, Jakarta</h4>
+        </div>
+      </div>
+      <div class="min-w-full px-4">
+        <div class="bg-white border rounded-xl shadow-md p-6 text-center">
+          <p class="text-gray-700 italic mb-4">"Top up Genshin termurah dan terpercaya! Sering promo juga."</p>
+          <h4 class="font-semibold text-gradient">- Sinta, Surabaya</h4>
+        </div>
+      </div>
+      <div class="min-w-full px-4">
+        <div class="bg-white border rounded-xl shadow-md p-6 text-center">
+          <p class="text-gray-700 italic mb-4">"Jasa digitalnya lengkap. Saya langganan terus di sini."</p>
+          <h4 class="font-semibold text-gradient">- Andi, Bandung</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center mt-4 gap-2">
+    <button class="w-3 h-3 rounded-full bg-gray-400 opacity-100" data-slide="0"></button>
+    <button class="w-3 h-3 rounded-full bg-gray-400 opacity-50" data-slide="1"></button>
+    <button class="w-3 h-3 rounded-full bg-gray-400 opacity-50" data-slide="2"></button>
+  </div>
+</section>
+
+<!-- Section Komentar dan Rating -->
+<section class="max-w-7xl mx-auto px-6 py-12" id="komentar">
+  <h2 class="text-3xl font-extrabold mb-12 text-center fade-in text-gradient" data-fade>
+    Berikan Komentar &amp; Rating Anda
+  </h2>
+  <div class="max-w-3xl mx-auto bg-white border rounded-xl shadow-md p-8 fade-in" data-fade>
+    <form id="comment-form" class="space-y-6">
+      <div>
+        <label for="name" class="block text-gray-700 font-semibold mb-2">Nama</label>
+        <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+      </div>
+      <div>
+        <label for="comment" class="block text-gray-700 font-semibold mb-2">Komentar</label>
+        <textarea id="comment" name="comment" rows="4" required class="w-full border border-gray-300 rounded-md px-4 py-2 resize-y focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2">Rating</label>
+        <div id="star-rating" class="flex space-x-1">
+          <i class="fas fa-star star" data-value="1" aria-label="1 bintang"></i>
+          <i class="fas fa-star star" data-value="2" aria-label="2 bintang"></i>
+          <i class="fas fa-star star" data-value="3" aria-label="3 bintang"></i>
+          <i class="fas fa-star star" data-value="4" aria-label="4 bintang"></i>
+          <i class="fas fa-star star" data-value="5" aria-label="5 bintang"></i>
+        </div>
+      </div>
+      <button type="submit" class="bg-gradient text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-[#0069d9] transition-colors duration-300 transform hover:-translate-y-1">
+        Kirim Komentar
+      </button>
+    </form>
+  </div>
+  <div class="max-w-3xl mx-auto mt-12">
+    <h3 class="text-2xl font-semibold mb-6 text-gradient">Komentar Terbaru</h3>
+    <div id="comments-list" class="space-y-6">
+      <!-- Komentar akan muncul di sini -->
+    </div>
+  </div>
+</section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gradient text-white py-12">
+   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      Tentang Kami
+     </h3>
+     <p class="text-gray-200 leading-relaxed">
+      GameQu adalah toko digital terpercaya yang menyediakan layanan jual beli akun game, top up berbagai game populer, dan jasa digital lainnya dengan keamanan dan kenyamanan pelanggan sebagai prioritas utama.
+     </p>
+    </div>
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      Kontak
+     </h3>
+     <p class="mb-2">
+      <i class="fab fa-whatsapp mr-2"></i>
+      <a class="hover:text-white transition-colors duration-300" href="https://wa.me/6281234567890" rel="noopener" target="_blank">
+       +62 812-3456-7890
+      </a>
+     </p>
+     <p>
+      <i class="fas fa-envelope mr-2"></i>
+      <a class="hover:text-white transition-colors duration-300" href="mailto:contact@gamequ.id">
+       contact@gamequ.id
+      </a>
+     </p>
+    </div>
+    <div class="flex items-end justify-center md:justify-end">
+     <p class="text-gray-300 text-sm select-none">
+      © 2025 GameQu. All rights reserved.
+     </p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.querySelector('i').classList.toggle('fa-bars');
+      menuBtn.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('[data-fade]');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Testimonial slider
+    const slider = document.querySelector('#testimonial-slider > div');
+    const buttons = document.querySelectorAll('#testimonial-slider + div button');
+    let currentSlide = 0;
+    const totalSlides = buttons.length;
+
+    function updateSlider(index) {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle('opacity-100', i === index);
+        btn.classList.toggle('opacity-50', i !== index);
+      });
+      currentSlide = index;
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        updateSlider(parseInt(btn.dataset.slide));
+      });
+    });
+
+    // Auto slide every 7 seconds
+    setInterval(() => {
+      let nextSlide = (currentSlide + 1) % totalSlides;
+      updateSlider(nextSlide);
+    }, 7000);
+
+    // Komentar dan Rating
+    const stars = document.querySelectorAll('#star-rating .star');
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+      star.addEventListener('mouseenter', () => {
+        const val = parseInt(star.dataset.value);
+        highlightStars(val);
+      });
+      star.addEventListener('mouseleave', () => {
+        highlightStars(selectedRating);
+      });
+      star.addEventListener('click', () => {
+        selectedRating = parseInt(star.dataset.value);
+        highlightStars(selectedRating);
+      });
+    });
+
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        if (parseInt(star.dataset.value) <= rating) {
+          star.classList.add('filled');
+        } else {
+          star.classList.remove('filled');
+        }
+      });
+    }
+
+    const commentForm = document.getElementById('comment-form');
+    const commentsList = document.getElementById('comments-list');
+
+    // Load comments from localStorage
+    let comments = JSON.parse(localStorage.getItem('gamequ-comments')) || [];
+    renderComments();
+
+    commentForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = commentForm.name.value.trim();
+      const comment = commentForm.comment.value.trim();
+
+      if (!name || !comment || selectedRating === 0) {
+        alert('Mohon isi nama, komentar, dan berikan rating.');
+        return;
+      }
+
+      const newComment = {
+        id: Date.now(),
+        name,
+        comment,
+        rating: selectedRating,
+        date: new Date().toISOString()
+      };
+
+      comments.unshift(newComment);
+      localStorage.setItem('gamequ-comments', JSON.stringify(comments));
+      renderComments();
+      commentForm.reset();
+      selectedRating = 0;
+      highlightStars(0);
+    });
+
+    function renderComments() {
+      commentsList.innerHTML = '';
+      if (comments.length === 0) {
+        commentsList.innerHTML = '<p class="text-gray-600 italic text-center">Belum ada komentar.</p>';
+        return;
+      }
+      comments.forEach(c => {
+        const commentEl = document.createElement('div');
+        commentEl.className = 'bg-white border rounded-xl shadow-md p-6';
+        commentEl.innerHTML = `
+          <div class="flex items-center mb-2">
+            <div class="text-yellow-400 flex space-x-1 mr-3" aria-label="Rating: ${c.rating} dari 5 bintang">
+              ${renderStars(c.rating)}
+            </div>
+            <h4 class="font-semibold text-gradient">${escapeHtml(c.name)}</h4>
+          </div>
+          <p class="text-gray-700 mb-2">${escapeHtml(c.comment)}</p>
+          <p class="text-gray-400 text-sm">${new Date(c.date).toLocaleString('id-ID', { dateStyle: 'medium', timeStyle: 'short' })}</p>
+        `;
+        commentsList.appendChild(commentEl);
+      });
+    }
+
+    function renderStars(rating) {
+      let starsHtml = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+          starsHtml += '<i class="fas fa-star"></i>';
+        } else {
+          starsHtml += '<i class="far fa-star"></i>';
+        }
+      }
+      return starsHtml;
+    }
+
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, function(m) {
+        return ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        })[m];
+      });
+    }
+  </script>  
+ </body>
+</html>
